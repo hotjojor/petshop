@@ -33,8 +33,13 @@ app.use('/api/clientes', clientesRouter);
 //   1. Crie routes/servicos.js copiando routes/clientes.js como modelo.
 //   2. Importe e monte o router aqui, do mesmo jeito que o de clientes:
 //
-//        import servicosRouter from './routes/servicos.js';
-//        app.use('/api/servicos', servicosRouter);
+       import servicosRouter from './routes/servicos.js';
+
+       app.use(cors())
+
+       app.use(express.json())
+       
+       app.use('/api/servicos', servicosRouter);
 //
 // Não esqueça de criar a tabela "servicos" em database.js antes!
 // -------------------------------------------------------------------------
